@@ -1,0 +1,17 @@
+.ap_breadcrumb {
+	margin: 0;
+	font-size: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.ap_breadcrumb a {
+	text-decoration: none;
+	color: inherit;
+}
+
+@media screen and (max-width: 533px) {
+	.ap_breadcrumb {
+		margin: 16px;
+	}
+}

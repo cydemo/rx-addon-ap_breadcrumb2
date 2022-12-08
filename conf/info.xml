@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+
+    <title xml:lang="ko">빵조각 애드온</title>
+	<description xml:lang="ko">현재 콘텐츠가 메뉴 구조에서 어느 위치에 있는지 '빵조각' 형태로 표시해줍니다.</description>
+    <version>0.0.4</version>
+    <date>2022-12-08</date>
+
+    <author email_address="cydemo@gmail.com" link="https://www.xetown.com/">
+        <name xml:lang="ko">cydemo</name>
+    </author>
+
+	<extra_vars>
+		<var name="show_homepage" type="select">
+			<title xml:lang="ko">메인 페이지 링크</title>
+			<description xml:lang="ko">메뉴 경로 맨 앞에 메인 페이지(홈페이지)를 표시할지 결정합니다.</description>
+			<options value="Y">
+				<title xml:lang="ko">사용함 (기본)</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">사용 안 함</title>
+			</options>
+		</var>
+		<var name="seperator" type="text">
+			<title xml:lang="ko">구분자</title>
+			<description xml:lang="ko">각 메뉴의 단계를 구분할 표식을 입력해주세요. 기본은 &gt;</description>
+		</var>
+		<var name="show_category" type="select">
+			<title xml:lang="ko">카테고리 표시</title>
+			<description xml:lang="ko">현재 페이지가 카테고리 정보를 가지고 있을 경우 표시합니다.</description>
+			<options value="Y">
+				<title xml:lang="ko">사용함 (기본)</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">사용 안 함</title>
+			</options>
+		</var>
+		<var name="show_upper_category" type="select">
+			<title xml:lang="ko">상위 카테고리 표시</title>
+			<description xml:lang="ko">현재 페이지의 카테고리에 상위 카테고리가 있을 경우 함께 표시합니다.</description>
+			<options value="Y">
+				<title xml:lang="ko">사용함 (기본)</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">사용 안 함</title>
+			</options>
+		</var>
+		<var name="show_document" type="select">
+			<title xml:lang="ko">문서 제목 표시</title>
+			<description xml:lang="ko">현재 페이지가 문서 모듈의 문서일 때 제목을 표시합니다.</description>
+			<options value="Y">
+				<title xml:lang="ko">사용함 (기본)</title>
+			</options>
+			<options value="N">
+				<title xml:lang="ko">사용 안 함</title>
+			</options>
+		</var>
+		<var name="skin" type="text">
+			<title xml:lang="ko">스킨</title>
+			<description xml:lang="ko">빵조각을 출력할 스킨 폴더명을 지정합니다. 기본값은 default</description>
+		</var>
+	</extra_vars>
+
+</addon>

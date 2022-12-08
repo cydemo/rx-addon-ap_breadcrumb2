@@ -1,0 +1,46 @@
+<!--@if(!empty($breadcrumb_info->list))-->
+<load target="style.css" />
+
+<div class="ap_breadcrumb">
+	<!--@if($breadcrumb_info->show_homepage)-->
+	<a href="{getSiteUrl()}">Home</a>
+	<!--@endif-->
+	<!--@foreach($breadcrumb_info->list as $key1 => $val1)-->
+		<!--@if($val1['selected'])-->
+		<!--@if($breadcrumb_info->show_homepage)-->
+		<span>{$breadcrumb_info->seperator}</span>
+		<!--@endif-->
+		<a href="{$val1['href']}" style="font-weight: bold;"|cond="$val1['node_srl'] === $breadcrumb_info->end">{$val1['text']}</a>
+			<!--@if(!empty($val1['list']))-->
+			<!--@foreach($val1['list'] as $key2 => $val2)-->
+			<!--@if($val2['selected'])-->
+			<span>{$breadcrumb_info->seperator}</span>
+			<a href="{$val2['href']}" style="font-weight: bold;"|cond="$val2['node_srl'] === $breadcrumb_info->end">{$val2['text']}</a>
+				<!--@if(!empty($val2['list']))-->
+				<!--@foreach($val2['list'] as $key3 => $val3)-->
+				<!--@if($val3['selected'])-->
+				<span>{$breadcrumb_info->seperator}</span>
+				<a href="{$val3['href']}" style="font-weight: bold;"|cond="$val3['node_srl'] === $breadcrumb_info->end">{$val3['text']}</a>
+				{@ break; }
+				<!--@endif-->
+				<!--@endforeach-->
+				<!--@endif-->
+			{@ break; }
+			<!--@endif-->
+			<!--@endforeach-->
+			<!--@endif-->
+		{@ break; }
+		<!--@endif-->
+	<!--@endforeach-->
+	<!--@if($breadcrumb_info->show_category)-->
+	<!--@foreach($breadcrumb_info->category_info as $category_srl => $category_info)-->
+	<span>{$breadcrumb_info->seperator}</span>
+	<a href="{$category_info->href}" style="font-weight: bold;"|cond="$category_srl == $breadcrumb_info->end">{$category_info->title}</a>
+	<!--@endforeach-->
+	<!--@endif-->
+	<!--@if($breadcrumb_info->show_document)-->
+	<span>{$breadcrumb_info->seperator}</span>
+	<a href="{$breadcrumb_info->document_info->href}" style="font-weight: bold;"|cond="$document_srl == $breadcrumb_info->end">{$breadcrumb_info->document_info->title}</a>
+	<!--@endif-->
+</div>
+<!--@endif-->
